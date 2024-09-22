@@ -40,7 +40,7 @@ const findProductById = async (req, res) => {
 }
 
 const getAllproducts = async (req, res) => {
-    const productId = req.params.id
+    //const productId = req.params.id
     try {
         const products = await productService.getAllProducts(req.query);
         return res.status(201).send(products);
@@ -50,7 +50,7 @@ const getAllproducts = async (req, res) => {
 }
 
 const createMultipleProduct = async (req, res) => {
-    const productId = req.params.id
+    //const productId = req.params.id
     try {
         const product = await productService.createMultipleProduct(req.body);
         return res.status(201).send({ message: "Products are successfully created" });

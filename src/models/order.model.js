@@ -60,7 +60,7 @@ const orderSchema = new Schema({
     },
     createdAt:{
         type:Date,
-        default:Date.noe()
+        default:Date.now()
     }
 })
 
