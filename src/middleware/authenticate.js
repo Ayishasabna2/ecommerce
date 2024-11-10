@@ -7,10 +7,11 @@ const authenticate = async (req, res, next) => {
         if (!token) {
             return res.status(404).send({ error: "tocken not found..." });
         }
-        const userId = jwtProvider.getUserIdFromToken(token);
-        const user = userService.findUserById(userId);
+        const userId = await jwtProvider.getUserIdFromToken(token);
+        const user = await userService.findUserById(userId);
         req.user = user;
 
+        console.log(user,userId);   
     } catch (error) {
         return res.status(500).send({ error: error.message });
     }
